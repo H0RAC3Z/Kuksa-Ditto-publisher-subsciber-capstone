@@ -51,7 +51,7 @@ Create the Ditto policy and thing using `policy.json` and `VSS_Ditto.json` follo
 
 In separate terminals, from this repository directory:
 
-1. Start KUKSA Databroker with the repository's VSS definition:
+1. Start KUKSA Databroker with the repository's VSS definition in the root directory of this repository so that it can find `OBD.json`:
 
    ```sh
    docker run --rm -it -p 55555:55555 \
@@ -62,7 +62,7 @@ In separate terminals, from this repository directory:
 2. Start the upstream data provider separately and ensure it writes
    `Vehicle.Speed` and `Vehicle.SteeringAngle` to this Databroker. (Can refer to testing section if no input)
 
-3. Start the KUKSA-to-Ditto reporter with venv activated:
+3. Start the KUKSA-to-Ditto reporter with venv activated in root directory of repository:
 
    ```sh
    python3 send_kuksa_data_to_ditto.py
@@ -75,7 +75,7 @@ value change. Set `KUKSA_HOST` and `KUKSA_PORT` if the broker is not at
 
 ## Testing
 
-To test sending data run with activated venv:
+To test sending data run with activated venv in root directory of repository:
 
    ```sh
    python3 test_kuksa.py
