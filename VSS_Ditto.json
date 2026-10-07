@@ -1,0 +1,15 @@
+{
+    "policyId": "org.ovin:my-policy",
+    "features": {
+        "Speed": {
+            "properties": {
+                "value": 0.0
+            }
+        }, 
+        "SteeringAngle": {
+            "properties": {
+                "value": 0.0
+            }
+        }
+    }
+}
