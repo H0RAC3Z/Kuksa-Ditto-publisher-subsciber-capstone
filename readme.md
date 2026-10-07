@@ -6,6 +6,12 @@ provides values to KUKSA is managed separately.
 
 ## Setup
 
+Clone this repo:
+
+```sh
+git clone git@github.com:H0RAC3Z/Kuksa-Ditto-publisher-subsciber-capstone.git
+```
+
 Create and activate a virtual environment, then install the Python dependencies:
 
 ```sh
