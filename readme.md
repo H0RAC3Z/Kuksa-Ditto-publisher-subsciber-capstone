@@ -17,7 +17,7 @@ git clone git@github.com:H0RAC3Z/Kuksa-Ditto-publisher-subsciber-capstone.git
 cd Kuksa-Ditto-publisher-subsciber-capstone/
 ```
 
-Create and activate a virtual environment, then install the Python dependencies:
+Create and activate a virtual environment, then install the Python dependencies(change to python if you use python instead of python3):
 
 ```sh
 python3 -m venv venv
@@ -52,10 +52,7 @@ Create the Ditto policy and thing using `policy.json` and `VSS_Ditto.json` follo
 4. Set the Thing ID to `org.ovin:my-vehicle` and then click create.
 
 ## Run
-If starting fresh, make sure venv is running to execute the python scripts:
-```sh
-.\venv\Scripts\Activate.ps1
-```   
+
 In separate terminals, from this repository directory:
 
 1. Start KUKSA Databroker with the repository's VSS definition in the root directory of this repository so that it can find `OBD.json`:
@@ -76,13 +73,22 @@ In separate terminals, from this repository directory:
    
 2. Make sure that ditto is running, it usually is always running. Navigate to `http://localhost:8080`.
 
-3. Start the upstream data provider separately and ensure it writes
+3. If starting fresh, make sure venv is running to execute the python scripts:
+```sh
+.\venv\Scripts\Activate.ps1
+```
+   
+4. Start the upstream data provider separately and ensure it writes
    `Vehicle.Speed` and `Vehicle.SteeringAngle` to this Databroker. (Can refer to testing section if no input)
 
-4. Start the KUKSA-to-Ditto reporter with venv activated in root directory of repository:
+5. Start the KUKSA-to-Ditto reporter with venv activated in root directory of repository:
 
    ```sh
    python3 send_kuksa_data_to_ditto.py
+   ```   
+   or   
+   ```sh
+   python send_kuksa_data_to_ditto.py
    ```
 
 The reporter subscribes to `Vehicle.Speed` and `Vehicle.SteeringAngle` and
