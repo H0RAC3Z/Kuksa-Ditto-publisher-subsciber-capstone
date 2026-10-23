@@ -6,6 +6,10 @@ provides values to KUKSA is managed separately.
 
 ## Setup
 
+Remote policy if need be/running into issues:   
+```sh
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
 Clone this repo and move into the directory:
 
 ```sh
