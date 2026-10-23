@@ -61,6 +61,7 @@ In separate terminals, from this repository directory:
    Powershell version:   
    ```sh   
      docker run --rm -it `
+      -p 55555:55555 `
       -v "${PWD}/OBD.json:/OBD.json" `
       ghcr.io/eclipse-kuksa/kuksa-databroker:main `
       --insecure --vss /OBD.json
