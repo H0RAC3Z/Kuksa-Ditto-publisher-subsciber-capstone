@@ -52,7 +52,10 @@ Create the Ditto policy and thing using `policy.json` and `VSS_Ditto.json` follo
 4. Set the Thing ID to `org.ovin:my-vehicle` and then click create.
 
 ## Run
-
+If starting fresh, make sure venv is running to execute the python scripts:
+```sh
+.\venv\Scripts\Activate.ps1
+```   
 In separate terminals, from this repository directory:
 
 1. Start KUKSA Databroker with the repository's VSS definition in the root directory of this repository so that it can find `OBD.json`:
@@ -70,6 +73,8 @@ In separate terminals, from this repository directory:
       ghcr.io/eclipse-kuksa/kuksa-databroker:main `
       --insecure --vss /OBD.json
     ```
+   
+2. Make sure that ditto is running, it usually is always running. Navigate to `http://localhost:8080`.
 
 3. Start the upstream data provider separately and ensure it writes
    `Vehicle.Speed` and `Vehicle.SteeringAngle` to this Databroker. (Can refer to testing section if no input)
