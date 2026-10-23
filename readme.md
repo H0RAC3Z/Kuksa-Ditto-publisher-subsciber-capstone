@@ -57,12 +57,19 @@ In separate terminals, from this repository directory:
    docker run --rm -it -p 55555:55555 \
      -v "$(pwd)/OBD.json:/OBD.json" \
      ghcr.io/eclipse-kuksa/kuksa-databroker:main --insecure --vss /OBD.json
-   ```
+   ```   
+   Powershell version:   
+   ```sh   
+     docker run --rm -it `
+      -v "${PWD}/OBD.json:/OBD.json" `
+      ghcr.io/eclipse-kuksa/kuksa-databroker:main `
+      --insecure --vss /OBD.json
+    ```
 
-2. Start the upstream data provider separately and ensure it writes
+3. Start the upstream data provider separately and ensure it writes
    `Vehicle.Speed` and `Vehicle.SteeringAngle` to this Databroker. (Can refer to testing section if no input)
 
-3. Start the KUKSA-to-Ditto reporter with venv activated in root directory of repository:
+4. Start the KUKSA-to-Ditto reporter with venv activated in root directory of repository:
 
    ```sh
    python3 send_kuksa_data_to_ditto.py
