@@ -103,3 +103,7 @@ To test sending data run with activated venv in root directory of repository:
    ```sh
    python3 test_kuksa.py
    ```
+  or   
+    ```sh
+     python3 test_kuksa.py
+    ```
