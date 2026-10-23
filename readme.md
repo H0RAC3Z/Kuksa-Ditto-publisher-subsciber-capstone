@@ -73,7 +73,7 @@ In separate terminals, from this repository directory:
    
 2. Make sure that ditto is running, it usually is always running. Navigate to `http://localhost:8080`.
 
-3. If starting fresh, make sure venv is running to execute the python scripts:
+3. Make sure venv is running to execute the python scripts:
 ```sh
 .\venv\Scripts\Activate.ps1
 ```
